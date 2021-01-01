@@ -1,0 +1,376 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+li {
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 980px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.header-wrapper {
+  width: 100%;
+  position: fixed;
+  z-index:10;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+
+.header {
+  height: 50px;
+  width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header ul img {
+  display: block;
+  height: 26px;
+  width: 26px;
+  margin-right: 5px;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header li {
+  display: flex;
+  align-items: center;
+  line-height: 26px;
+  font-size: 14px;
+  margin-left: 35px;
+  cursor: pointer;
+}
+
+.search-wrapper {
+  width: 468px;
+  height: 28px;
+  position: relative;
+}
+
+.search-wrapper img {
+  display: block;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 3px;
+  right: 15px;
+}
+
+.int {
+  width: 468px;
+  height: 28px;
+  line-height: 28px;
+  color: #999;
+  font-size: 14px;
+  border: 1px solid #d5d5d5;
+  background-color: #f2f2f5;
+  padding-left: 16px;
+  padding-right: 50px;
+}
+
+.int[type="text"]:hover,
+.int[type="text"]:focus {
+  border: 1px solid #fa7d3c;
+  background-color: #fff;
+}
+
+.main-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-top: 70px;
+  background: url("img/body_bg.jpg") no-repeat;
+  background-size: cover;
+}
+
+.main-content {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.user-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-header {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight:normal;
+  width: 100%;
+  text-align: center;
+  line-height: 22px;
+}
+
+.user-name2{
+    margin-top: 6px;
+    color: #fff;
+    text-align: center;
+    font-weight:normal;
+    text-shadow: 0 0 4px rgba(0,0,0,0.5);
+    vertical-align: text-bottom;
+}
+
+.personal-signature {
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
+  color: #f2f2f5;
+}
+
+.article-wrapper {
+  width: 980px;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding-bottom: 20px;
+}
+
+.article-wrapper-header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.article-wrapper-header img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
+
+.article-wrapper-header h3 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.article-list li {
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.top-wrapper {
+  padding: 16px 16px 0;
+  display: flex;
+}
+
+.top-wrapper img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.right-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-info h6 {
+  font-weight: 700;
+  color: rgb(51, 51, 51);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.right-info span {
+  font-weight: 400;
+  color: rgb(128, 128, 128);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.article-txt {
+  margin-left: 76px;
+  padding-right: 16px;
+  font-size: 14px;
+  line-height: 23px;
+  color: rgb(51, 51, 51);
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+.img-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 76px;
+  padding-bottom: 12px;
+  width: 338px;
+}
+
+.img-wrapper img {
+  width: 110px;
+  height: 110px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  overflow: hidden;
+}
+
+.img-wrapper img:nth-child(3n) {
+  margin-right: 0;
+}
+
+.operate_list {
+  display: flex;
+  width: 100%;
+  height: 38px;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+
+.operate_list > div {
+  width: 25%;
+  height: 22px;
+  border-right: 1px solid rgb(217, 217, 217);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.operate_list > div:last-child {
+  border-right: none;
+}
+
+.operate_list img {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+}
+
+.operate_list p {
+  color: #707070;
+}
+
+.pf_photo {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 48px auto 0;
+  padding: 4px;
+  background: #fff;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+}
+
+.photo_wrap{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.pf_intro {
+  font-size: 10px;
+  margin-top: 4px;
+  text-align: center;
+  color: #fff;
+  line-height: 18px;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.PCD_header {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  *vertical-align: auto;
+}
+
+.pf_wrap {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  *z-index: 5;
+}
+
+.cover_wrap {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-transform: scaleX(1.05) scaleY(1.05);
+  transform: scaleX(1.05) scaleY(1.05);
+  z-index: 1;
+}
+
+.banner_transition {
+  -webkit-transform: scaleX(1) scaleY(1);
+  transform: scaleX(1) scaleY(1);
+  -webkit-transition: -webkit-transform 4s linear;
+  transition: transform 4s linear;
+}
+
+.shadow {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.S_shadow {
+  background: url(../../../images/pagecard/bg_header_shadow.png?id=1404211047727) center bottom repeat-x;
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%);
+}
+
+.pf_username {
+  margin-top: 6px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 4px rgba(0,0,0,0.5);
+  vertical-align: text-bottom;
+}
+
+.username {
+  font-size: 22px;
+  display: inline;
+}
