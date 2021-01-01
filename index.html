@@ -79,9 +79,72 @@
                         </select>
                     </div>
                 </div>
-                <ul class="article-list">
+                <ul class id="wbzhengwen">
+
+                    <li class="article-list">
+                        <div class="top-wrapper">
+                            <img src=${item.publishImg} alt="">
+                            <div class="right-info">
+                                <h6>${item.name}</h6>
+                                <span>${item.publishTime}</span>
+                            </div>
+                        </div>
+                        <p class="article-txt">
+                            正文内容
+                        </p>
+                        <div class="img-wrapper">${item.imgList}</div>
+                        <div class="operate_list">
+                            <div>
+                                <img src="img/icon/collect.png" alt="">
+                                <p id=shoucang${index}>${item.collectNum || "收藏"} </p>
+                            </div>
+                            <div>
+                                <img src="img/icon/forward.png" alt="">
+                                <p id=zhuanfa${index}>${item.forwardNum || "转发"}</p>
+                            </div>
+                            <div onclick="commentAction(${index})">
+                                <img src="img/icon/comment.png" alt="">
+                                <p id=pinglun${index}>${item.commentNum || "评论"}</p>
+                            </div>
+                            <div onclick="agreeAction(${index})">
+                                <img src="img/icon/agree.png" alt="">
+                                <p id=zan${index}>${item.agreeNum || "赞"}</p>
+                            </div> 
+
+                        </div>
+                        <div class="plwaikuang">
+                            <div class="plshuru">
+                                <img class="pltouxiang"
+                                    src="https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R"
+                                    alt="Shayne_Ryu">
+                                <textarea
+                                    style="border:0;margin-left: 15px;border-radius:5px;background-color:rgba(241,241,241,.98);width: 850px;height: 40px;padding: 10px;resize: none;"
+                                    placeholder="请输入评论">
+                                </textarea>
+                                <button type="button" class="plfasong button green">发送</button>
+                            </div>
+                            <ol id="pinglun" >
+                                <li class="plshuru" style="display: flex;flex-direction:row;margin-top: 10px;">
+                                    <img class="pltouxiang"
+                                    src="https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R"
+                                    alt="Shayne_Ryu">
+                                    <dev style="display: flex;flex-direction:column;margin-left: 15px;">
+                                        <dev style="display: flex;flex-direction:row;flex-wrap: wrap;">
+                                            <a style="color: #eb7350">刘小元</a><p>：</p>
+                                            <p>你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨</p>
+                                        </dev>
+                                        <p>2021.1.1</p>
+                                    </dev>
+                                </li>
+                                
+                                
+                            </ol>
+                        </div>
+                    </li>
+
 
                 </ul>
+
             </div>
         </div>
 
