@@ -11,144 +11,81 @@
 </head>
 
 <body>
-    <div class="header-wrapper">
-        <div class="header">
-            <div class="search-wrapper">
-                <input class="int" type="text" name="" id="accountName" placeholder="大家正在搜：孙俪年终总结小作文"
-                    autocomplete="off" />
-                <img src="img/icon/search.png" alt="">
-            </div>
-            <ul>
-                <li>
-                    <img src="img/icon/home.png" alt="">
-                    <p>首页</p>
-                </li>
-                <li>
-                    <img src="img/icon/active.png" alt="">
-                    <p>动态</p>
-                </li>
-                <li>
-                    <img src="img/icon/user.png" alt="">
-                    <p class="user-name"></p>
-                </li>
-                <li>
-                    <img src="img/icon/email.png" alt="">
-                    <p></p>
-                </li>
-            </ul>
+<div class="header-wrapper">
+    <div class="header">
+        <div class="search-wrapper">
+            <input class="int" type="text" name="" id="accountName" placeholder="大家正在搜：孙俪年终总结小作文"
+                   autocomplete="off"/>
+            <img src="img/icon/search.png" alt="">
         </div>
+        <ul>
+            <li>
+                <img src="img/icon/home.png" alt="">
+                <p>首页</p>
+            </li>
+            <li>
+                <img src="img/icon/active.png" alt="">
+                <p>动态</p>
+            </li>
+            <li>
+                <img src="img/icon/user.png" alt="">
+                <p class="user-name"></p>
+            </li>
+            <li>
+                <img src="img/icon/email.png" alt="">
+                <p></p>
+            </li>
+        </ul>
     </div>
-    <div class="main-wrapper">
-        <div class="main-content">
-            <div class="PCD_header">
-                <div class="pf_wrap" layout-shell="false" node-type="cover_wrap">
-                    <div class="cover_wrap banner_transition" node-type="cover"
-                        style="background-image:url(//img.t.sinajs.cn/t5/skin/public/profile_cover/001.jpg)"
-                        cover-type="1">
-                    </div>
-                    <div class="shadow  S_shadow" layout-shell="false">
-                        <div class="pf_photo" node-type="photo">
-                            <p class="photo_wrap">
-                                <a href="javascript:void(0);" action-type="setPhoto" title="更换头像"
-                                    suda-uatrack="key=profile_head&amp;value=head_host">
-                                    <img src="https://tvax4.sinaimg.cn/crop.0.0.1080.1080.180/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609499264&amp;ssig=YH0icqD85v"
-                                        alt="Shayne_Ryu" class="photo">
-                                </a>
-
-                            </p>
-                        </div>
-                        <div class="pf_username">
-                            <h1 class="username" id="xingming"></h1>
-                        </div>
-                        <div class="pf_intro" id="geqian"></div>
-                    </div>
-
+</div>
+<div class="main-wrapper">
+    <div class="main-content">
+        <div class="PCD_header">
+            <div class="pf_wrap" layout-shell="false" node-type="cover_wrap">
+                <div class="cover_wrap banner_transition" node-type="cover"
+                     style="background-image:url(//img.t.sinajs.cn/t5/skin/public/profile_cover/001.jpg)"
+                     cover-type="1">
                 </div>
-            </div>
-            <div class="article-wrapper">
-                <div class="article-wrapper-header">
-                    <img src="img/icon/light.png" alt="">
-                    <p class="h2">我的微博</p>
-                    <p class="h2">&#12288&#12288&#12288&#12288排序方法：</p>
-                    <div class="select">
-                        <select name="cars">
-                            <option value="shijian">时间</option>
-                            <option value="dianzan">点赞</option>
-                            <option value="pinglun">评论</option>
-                            <option value="shoucang">收藏</option>
-                        </select>
-                    </div>
-                </div>
-                <ul class id="wbzhengwen">
+                <div class="shadow  S_shadow" layout-shell="false">
+                    <div class="pf_photo" node-type="photo">
+                        <p class="photo_wrap">
+                            <a href="javascript:void(0);" action-type="setPhoto" title="更换头像"
+                               suda-uatrack="key=profile_head&amp;value=head_host">
+                                <img src="https://tvax4.sinaimg.cn/crop.0.0.1080.1080.180/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609499264&amp;ssig=YH0icqD85v"
+                                     alt="Shayne_Ryu" class="photo">
+                            </a>
 
-                    <li class="article-list">
-                        <div class="top-wrapper">
-                            <img src=${item.publishImg} alt="">
-                            <div class="right-info">
-                                <h6>${item.name}</h6>
-                                <span>${item.publishTime}</span>
-                            </div>
-                        </div>
-                        <p class="article-txt">
-                            正文内容
                         </p>
-                        <div class="img-wrapper">${item.imgList}</div>
-                        <div class="operate_list">
-                            <div>
-                                <img src="img/icon/collect.png" alt="">
-                                <p id=shoucang${index}>${item.collectNum || "收藏"} </p>
-                            </div>
-                            <div>
-                                <img src="img/icon/forward.png" alt="">
-                                <p id=zhuanfa${index}>${item.forwardNum || "转发"}</p>
-                            </div>
-                            <div onclick="commentAction(${index})">
-                                <img src="img/icon/comment.png" alt="">
-                                <p id=pinglun${index}>${item.commentNum || "评论"}</p>
-                            </div>
-                            <div onclick="agreeAction(${index})">
-                                <img src="img/icon/agree.png" alt="">
-                                <p id=zan${index}>${item.agreeNum || "赞"}</p>
-                            </div> 
-
-                        </div>
-                        <div class="plwaikuang">
-                            <div class="plshuru">
-                                <img class="pltouxiang"
-                                    src="https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R"
-                                    alt="Shayne_Ryu">
-                                <textarea
-                                    style="border:0;margin-left: 15px;border-radius:5px;background-color:rgba(241,241,241,.98);width: 850px;height: 40px;padding: 10px;resize: none;"
-                                    placeholder="请输入评论">
-                                </textarea>
-                                <button type="button" class="plfasong button green">发送</button>
-                            </div>
-                            <ol id="pinglun" >
-                                <li class="plshuru" style="display: flex;flex-direction:row;margin-top: 10px;">
-                                    <img class="pltouxiang"
-                                    src="https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R"
-                                    alt="Shayne_Ryu">
-                                    <dev style="display: flex;flex-direction:column;margin-left: 15px;">
-                                        <dev style="display: flex;flex-direction:row;flex-wrap: wrap;">
-                                            <a style="color: #eb7350">刘小元</a><p>：</p>
-                                            <p>你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨</p>
-                                        </dev>
-                                        <p>2021.1.1</p>
-                                    </dev>
-                                </li>
-                                
-                                
-                            </ol>
-                        </div>
-                    </li>
-
-
-                </ul>
+                    </div>
+                    <div class="pf_username">
+                        <h1 class="username" id="xingming"></h1>
+                    </div>
+                    <div class="pf_intro" id="geqian"></div>
+                </div>
 
             </div>
         </div>
+        <div class="article-wrapper">
+            <div class="article-wrapper-header">
+                <img src="img/icon/light.png" alt="">
+                <p class="h2">我的微博</p>
+                <p class="h2">&#12288&#12288&#12288&#12288排序方法：</p>
+                <div class="select">
+                    <select name="cars">
+                        <option value="shijian">时间</option>
+                        <option value="dianzan">点赞</option>
+                        <option value="pinglun">评论</option>
+                        <option value="shoucang">收藏</option>
+                    </select>
+                </div>
+            </div>
+            <ul class id="wbzhengwen">
+            </ul>
 
+        </div>
     </div>
+
+</div>
 
 </body>
 

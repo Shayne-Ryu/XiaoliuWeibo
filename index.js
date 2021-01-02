@@ -44,7 +44,7 @@ var data = [{
     commentNum: 0,
     agreeNum: 0,
     flag: false
-},{
+}, {
     publishImg: "img/publish.jpg",
     publishName: "财经网",
     publishTime: "50分钟前",
@@ -62,11 +62,34 @@ var data = [{
     flag: false
 }]
 
+var comment = [{
+    name: "Shayne_ryu",
+    src: "https://www.baidu.com",
+    img: "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R",
+    time: "2020.1.2",
+    details: "你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨你是憨憨",
+    level: 0
+}, {
+    name: "Shayne_ryu",
+    src: "https://www.baidu.com",
+    img: "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R",
+    time: "2020.1.2",
+    details: "不乱于心，不困于情，不畏将来，不念过往2",
+    level: 0
+}, {
+    name: "Shayne_ryu",
+    src: "https://www.baidu.com",
+    img: "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R",
+    time: "2020.1.2",
+    details: "不乱于心，不困于情，不畏将来，不念过往3",
+    level: 0
+}]
+
 var userInfo = {
     name: "Shayne_Ryu",
     img: "./img/user_header.jpg",
     personalSignature: "不乱于心，不困于情，不畏将来，不念过往"
-}; //用户信息
+} //用户信息
 
 
 var articleList = document.querySelector("#wbzhengwen");//文章列表dom
@@ -74,6 +97,7 @@ var userName = document.querySelector(".user-name");//用户名dom
 var userName2 = document.querySelector("#xingming");//用户名dom
 var userHeader = document.querySelector(".user-header");//用户头像dom
 var personalSignature = document.querySelector("#geqian");//用户个性签名
+var isCommentclick = 0;
 
 // userName.innerHTML = userInfo.name
 userName2.innerHTML = userInfo.name
@@ -117,9 +141,10 @@ function serialList() {
                                 </div> 
                             </div>
                         </li>
+                        <dev id=zhengwen${index}></dev>
         `
     })
-    //articleList.innerHTML = htmlStr
+    articleList.innerHTML = htmlStr
 }
 
 //点赞
@@ -136,6 +161,44 @@ function agreeAction(index) {
     serialList()
 }
 
-function commentAction(index){
-    alert("Hello World"+index)
+//评论
+function commentAction(index) {
+    var xiangxipinglun = document.querySelector("#zhengwen" + index);//载入评论区
+    if (isCommentclick == 1) {
+        xiangxipinglun.innerHTML = ""
+        isCommentclick = 0;
+        return;
+    }
+    isCommentclick = 1;
+    var commentStr = `<div class="plwaikuang">
+    <div class="plshuru">
+        <img class="pltouxiang"
+            src="https://tvax4.sinaimg.cn/crop.0.0.1080.1080.1024/007msK2bly8ghdmxmoukxj30u00u0goh.jpg?KID=imgbed,tva&amp;Expires=1609500821&amp;ssig=IpnL1YsC6R"
+            alt="Shayne_Ryu">
+        <textarea
+            style="border:0;margin-left: 15px;border-radius:5px;background-color:rgba(255,255,255);width: 850px;height: 40px;padding: 10px;resize: none;"
+            placeholder="请输入评论"></textarea>
+        <button type="button" class="plfasong button green">发送</button>
+    </div>`
+    comment.forEach(function (item, index) {
+        commentStr += `
+        <ol id="pinglun" >
+             <li class="plshuru" style="display: flex;flex-direction:row;margin-top: 10px;">
+                    <img class="pltouxiang"
+                         src=${item.img}
+                        alt="touxiang">
+                <dev style="display: flex;flex-direction:column;margin-left: 15px;">
+                     <dev style="display: flex;flex-direction:row;flex-wrap: wrap;">
+                        <a href=${item.src} style="color: #eb7350;text-decoration:none">${item.name}</a><p>：</p>
+                         <p style="color:rgb(70,70,70);font-size: 14px;margin-top:2px" >${item.details}</p>
+                 </dev>
+                 <p style="color:rgb(156,156,156);font-size: 10px;" >${item.time}</p>
+                  </dev>
+                  
+             </li>
+        </ol>
+        <dev overflow:hidden style="color:rgba(156,156,156,0.2);opacity：0.1; width:80%">——————————————————————————————————————————————————————————</dev>
+        `
+    })
+    xiangxipinglun.innerHTML = commentStr
 }
